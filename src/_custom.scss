@@ -1,0 +1,61 @@
+$dark: #0d0d1f;
+$primary: #f1f1f1;
+$primary-light: #eaeaea;
+$primary-dark: #6b6b6b;
+$secondary: #71cd14;
+
+button.btn,
+a.btn {
+  &-secondary {
+    color: $primary;
+
+    &:hover {
+      color: $secondary;
+      border: 1px solid $secondary;
+      background-color: transparent;
+      transition: all 0.3s linear;
+    }
+  }
+
+  &-light {
+    background-color: $primary-light;
+    color: $dark;
+    border: none;
+
+    &:hover {
+      color: $primary;
+      background-color: $dark;
+
+      transition: all 0.3s linear;
+    }
+  }
+
+  text-transform: uppercase;
+  padding: 0.7rem 1.8rem;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  background-color: $secondary;
+}
+
+@import "~bootstrap/scss/mixins";
+
+@import "~bootstrap/scss/functions";
+
+@import "~bootstrap/scss/variables";

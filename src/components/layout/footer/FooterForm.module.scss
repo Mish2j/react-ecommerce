@@ -1,0 +1,41 @@
+.form {
+  @include media-breakpoint-down(md) {
+    text-align: center;
+  }
+
+  h3 {
+    color: $primary;
+    font-size: 1.1rem;
+  }
+  &__text {
+    color: $primary-dark;
+    font-size: 14px;
+    line-height: 2.3;
+    font-weight: normal;
+  }
+
+  .form__input,
+  .form__input:focus {
+    background: rgba(255, 255, 255, 0.15);
+    color: $primary !important;
+    border: none;
+
+    width: 70%;
+    padding: 13px 20px 13px 13px;
+  }
+
+  .form__btn {
+    font-size: 12px;
+    padding: 10px;
+    position: relative;
+    right: 10%;
+    border: none;
+
+    &:hover {
+      opacity: 0.8;
+      border: none;
+      background-color: $secondary;
+      color: $primary;
+    }
+  }
+}

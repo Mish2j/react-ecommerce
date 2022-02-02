@@ -1,0 +1,80 @@
+.product {
+  border: 1px solid $primary-light;
+  margin-bottom: 2rem;
+
+  &__img {
+    img {
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 1 / 0.8;
+    }
+  }
+
+  &__body {
+    padding: 1rem 1.3rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  &__price {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  svg {
+    transition: all 0.3s ease;
+    &:hover {
+      color: $secondary;
+    }
+  }
+
+  .iconBtn {
+    font-size: 1rem;
+    position: relative;
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .quantity {
+    position: absolute;
+    top: -10px;
+    left: 14px;
+    background-color: $secondary;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  }
+
+  .animateBtn {
+    animation: pulse 1s infinite;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 $secondary;
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}

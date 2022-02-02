@@ -1,0 +1,9 @@
+.footer {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+
+  @include media-breakpoint-down(md) {
+    display: flex;
+    justify-content: center;
+  }
+}

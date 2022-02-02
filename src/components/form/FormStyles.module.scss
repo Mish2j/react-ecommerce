@@ -1,0 +1,30 @@
+input.invalid,
+textarea.invalid,
+select.invalid,
+textarea.invalid:focus,
+input.invalid:focus,
+select.invalid:focus {
+  border-color: $danger;
+  background-color: #ffe8e8;
+}
+
+label.invalidLabel {
+  color: $danger;
+
+  span {
+    font-size: 0.9rem;
+  }
+}
+
+.btnGroup {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+
+  @include media-breakpoint-down(sm) {
+    flex-direction: column;
+    button + button {
+      margin-top: 1rem;
+    }
+  }
+}

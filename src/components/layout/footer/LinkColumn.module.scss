@@ -1,0 +1,23 @@
+.list {
+  @include media-breakpoint-down(md) {
+    text-align: center;
+  }
+
+  &__title {
+    color: $primary;
+    font-size: 1.1rem;
+  }
+
+  &__links {
+    a {
+      color: $primary-dark;
+      font-size: 14px;
+      line-height: 2.3;
+      transition: all 0.3s linear;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}

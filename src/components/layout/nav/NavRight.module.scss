@@ -1,0 +1,35 @@
+.navRight {
+  @include media-breakpoint-up(lg) {
+    justify-content: flex-end !important;
+  }
+
+  @include media-breakpoint-down(lg) {
+    justify-content: flex-start !important;
+  }
+
+  a {
+    font-size: 0.9rem;
+    color: $dark !important;
+    transition: all 0.3s ease-in;
+
+    &:hover {
+      color: $secondary !important;
+    }
+  }
+
+  .iconNav {
+    @include media-breakpoint-down(lg) {
+      margin-top: 1rem;
+      flex-direction: row;
+
+      a {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+      }
+    }
+  }
+
+  .curPage {
+    color: $secondary !important;
+  }
+}

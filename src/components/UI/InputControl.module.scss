@@ -1,0 +1,19 @@
+.quantity {
+  display: flex;
+
+  &__input {
+    border-radius: 0 !important;
+    width: 50%;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  &__btn {
+    border-radius: 0 !important;
+    padding: 0 0.8rem !important;
+    width: 100%;
+  }
+}

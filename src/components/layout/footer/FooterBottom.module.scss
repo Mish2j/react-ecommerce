@@ -1,0 +1,38 @@
+.rights {
+  font-size: 14px;
+  @include media-breakpoint-down(md) {
+    text-align: center;
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  @include media-breakpoint-up(lg) {
+    justify-content: flex-end;
+  }
+
+  @include media-breakpoint-down(md) {
+    justify-content: center;
+  }
+
+  a {
+    width: 2.3rem;
+    height: 2.3rem;
+    color: $primary;
+    background-color: rgba(255, 255, 255, 0.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    transition: all 0.3s linear;
+
+    &:hover {
+      background-color: $secondary;
+    }
+  }
+}

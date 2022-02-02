@@ -1,0 +1,24 @@
+.skeletonCard {
+  border: 1px solid $primary-light;
+  margin-bottom: 2rem;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+.skeletonImg {
+  height: 10rem;
+  background: #cdcdcd;
+  width: 100%;
+
+  @include media-breakpoint-down(lg) {
+    height: 15rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    height: 20rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    height: 15rem;
+  }
+}
