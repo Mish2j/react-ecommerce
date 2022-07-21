@@ -1,21 +1,21 @@
-import { useState, useEffect, useCallback } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 import { getProductInfo } from "../../store/product-actions";
-import { centsToDollars } from "../../helper";
+import { modalActions } from "../../store/modal-slice";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import InputControl from "../UI/InputControl";
 import Loader from "../UI/Loader";
 import NoProduct from "../UI/NoProduct";
+import ProductDescription from "./ProductDescription";
+import ProductInfoImg from "./ProductInfoImg";
 
 import styles from "./ProductInfo.module.scss";
-import { modalActions } from "../../store/modal-slice";
 
 const ProductInfo = () => {
   const [quantityVal, setQuantityVal] = useState(0);
@@ -26,7 +26,7 @@ const ProductInfo = () => {
 
   useEffect(() => {
     dispatch(getProductInfo(+params.productId));
-  }, [dispatch]);
+  }, [dispatch, params.productId]);
 
   const addToCartHandler = () => {
     dispatch(
@@ -62,26 +62,18 @@ const ProductInfo = () => {
 
   return (
     <Row className={styles.product}>
+      <ProductInfoImg
+        imageAlt={productDetail.title}
+        imageSrc={productDetail.image}
+      />
       <Col lg={6} sm={12}>
-        <div className={styles["product__img"]}>
-          <Image fluid src={productDetail.image} alt={productDetail.title} />
-        </div>
-      </Col>
-      <Col lg={6} sm={12}>
-        <div className={styles["product__text"]}>
-          <h3>{productDetail.title}</h3>
-          <p className={styles["product__price"]}>
-            {`$${centsToDollars(productDetail.price).toFixed(2)}`}
-          </p>
-          <p>
-            Category -
-            <Link to="../../shop" className={styles["product__category"]}>
-              {` ${productDetail.category}`}
-            </Link>
-          </p>
-          <p className={styles["product__description"]}>
-            {productDetail.description}
-          </p>
+        <div className={styles["product__container"]}>
+          <ProductDescription
+            title={productDetail.title}
+            price={productDetail.price}
+            category={productDetail.category}
+            description={productDetail.description}
+          />
           <div className={styles["product__quantity"]}>
             <p>Quantity:</p>
             <InputControl

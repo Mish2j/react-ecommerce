@@ -1,0 +1,23 @@
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.price {
+  color: $secondary;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.category {
+  color: $secondary;
+
+  &:hover {
+    color: $primary-dark;
+    transition: all 0.3s linear;
+  }
+}
+
+.description {
+  margin-bottom: 2rem;
+}

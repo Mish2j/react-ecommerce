@@ -1,0 +1,9 @@
+.image {
+  @include media-breakpoint-down(lg) {
+    margin-bottom: 2.5rem;
+  }
+
+  img {
+    width: 100%;
+  }
+}

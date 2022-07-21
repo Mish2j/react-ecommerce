@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 import Col from "react-bootstrap/Col";
 import CategoryFilter from "./CategoryFilter";
 import PriceFilter from "./PriceFilter";
@@ -11,4 +13,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default memo(Sidebar);

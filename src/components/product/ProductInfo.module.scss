@@ -1,45 +1,12 @@
 .product {
   align-items: center;
-  &__img {
-    @include media-breakpoint-down(lg) {
-      margin-bottom: 2.5rem;
-    }
 
-    img {
-      width: 100%;
-    }
-  }
-
-  &__text {
+  &__container {
     padding-left: 3rem;
 
     @include media-breakpoint-down(lg) {
       padding-left: 0;
     }
-  }
-
-  h3 {
-    font-size: 1.6rem;
-    font-weight: 700;
-  }
-
-  &__price {
-    color: $secondary;
-    font-size: 1.6rem;
-    font-weight: 700;
-  }
-
-  &__category {
-    color: $secondary;
-
-    &:hover {
-      color: $primary-dark;
-      transition: all 0.3s linear;
-    }
-  }
-
-  &__description {
-    margin-bottom: 2rem;
   }
 
   &__quantity {

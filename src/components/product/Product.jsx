@@ -14,10 +14,9 @@ import styles from "./Product.module.scss";
 const TITLE_LENGTH = 17;
 const CART_ICON_ANIM_TIME = 4000;
 
-const Product = (props) => {
+const Product = ({ item }) => {
   const dispatch = useDispatch();
   const [isAnimated, setIsAnimated] = useState(false);
-  const { item } = props;
   const quantityInCart = getCartItemQuantity(item.id);
 
   const addItemToCartHandler = () => {

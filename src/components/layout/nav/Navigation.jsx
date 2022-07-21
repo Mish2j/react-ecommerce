@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
@@ -32,4 +33,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default memo(Navigation);

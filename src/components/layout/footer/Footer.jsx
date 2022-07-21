@@ -1,3 +1,5 @@
+import { memo, useMemo } from "react";
+
 import FooterBottom from "./FooterBottom";
 import FooterForm from "./FooterForm";
 import LinkColumn from "./LinkColumn";
@@ -7,48 +9,39 @@ import Row from "react-bootstrap/Row";
 
 import styles from "./Footer.module.scss";
 
-const Footer = () => {
+const Footer = memo(() => {
+  const footerLinks = {
+    titles: ["Top Products", "Quick Links", "Features", "Resources"],
+    links: [
+      [
+        "Managed Website",
+        "Manage Reputation",
+        "Power Tools",
+        "Marketing Service",
+      ],
+      ["Jobs", "Brand Assets", "Investor Relations", "Terms of Service"],
+      ["Jobs", "Brand Assets", "Investor Relations", "Terms of Service"],
+      ["Guides", "Research", "Experts", "Agencies"],
+    ],
+  };
+
+  const links = footerLinks.titles.map((title, i) => {
+    return (
+      <LinkColumn key={title} title={title} links={footerLinks.links[i]} />
+    );
+  });
+
   return (
     <footer className={`${styles.footer} bg-dark`}>
       <Container>
         <Row className="mb-5">
-          <LinkColumn
-            title="Top Products"
-            links={[
-              "Managed Website",
-              "Manage Reputation",
-              "Power Tools",
-              "Marketing Service",
-            ]}
-          />
-          <LinkColumn
-            title="Quick Links"
-            links={[
-              "Jobs",
-              "Brand Assets",
-              "Investor Relations",
-              "Terms of Service",
-            ]}
-          />
-          <LinkColumn
-            title="Features"
-            links={[
-              "Jobs",
-              "Brand Assets",
-              "Investor Relations",
-              "Terms of Service",
-            ]}
-          />
-          <LinkColumn
-            title="Resources"
-            links={["Guides", "Research", "Experts", "Agencies"]}
-          />
+          {links}
           <FooterForm />
         </Row>
         <FooterBottom />
       </Container>
     </footer>
   );
-};
+});
 
 export default Footer;

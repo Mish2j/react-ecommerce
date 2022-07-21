@@ -1,17 +1,17 @@
+import { memo } from "react";
+
 import { cartActions } from "../../store/cart-slice";
 import { useDispatch } from "react-redux";
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { centsToDollars } from "../../helper";
 
-import styles from "./CartItem.module.scss";
 import InputControl from "../UI/InputControl";
+import ItemDescription from "./ItemDescription";
 
-const CartItem = (props) => {
+const CartItem = memo((props) => {
   const { item } = props;
 
   const dispatch = useDispatch();
@@ -30,17 +30,11 @@ const CartItem = (props) => {
 
   return (
     <Row className="align-items-center mb-5">
-      <Col md={3} sm={12}>
-        <div className={styles.img}>
-          <Image fluid src={item.image} alt={item.title.trim()} />
-        </div>
-      </Col>
-      <Col md={5}>
-        <p className={styles.title}>{item.title}</p>
-      </Col>
-      <Col md={2}>
-        <p className={styles.price}>${centsToDollars(item.price).toFixed(2)}</p>
-      </Col>
+      <ItemDescription
+        imgSrc={item.image}
+        title={item.title}
+        price={item.price}
+      />
       <Col md={2} className="col-4 m-auto">
         <InputControl
           inputVal={item.quantity}
@@ -56,6 +50,6 @@ const CartItem = (props) => {
       </Col>
     </Row>
   );
-};
+});
 
 export default CartItem;
